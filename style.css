@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --light-green: hsl(148, 38%, 91%);
+  --green: hsl(169, 82%, 27%);
+  --custom-green: #0c7d69;
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --medium-grey: hsl(186, 15%, 59%);
+  --dark-gey: hsl(187, 24%, 22%);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  width: 100%;
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-green);
+}
+
+h2 {
+  font-weight: 800;
+}
+
+/* form container */
+.form-container {
+  background: var(--white);
+  position: relative;
+  max-width: 550px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2.5rem 2.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name-inputs {
+  display: flex;
+  gap: 20px;
+}
+.name-inputs .form-group {
+  flex: 1;
+}
+
+.name-inputs .form-group input {
+  width: 100%;
+}
+
+.query{
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   width: 100%;
+}
+
+.query-type{
+   width: 100%;
+   padding: 10px 0 10px 20px;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   gap: .5rem;
+   border: 1px solid var(--dark-gey);
+   cursor: pointer;
+}
+label{
+    cursor: pointer;
+}
+.query-type.radio-selected{
+    background: var(--light-green);
+}
+input:not([type="checkbox"]):not([type="radio"]){
+    padding: .7rem;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid var(--medium-grey);
+   
+}
+input:not([type="checkbox"]):not([type="radio"]):hover,textarea:hover{
+    border: 1px solid var(--green);
+}
+input:not([type="checkbox"]):not([type="radio"]):focus,textarea:focus{
+    outline: 1px solid var(--green);
+}
+textarea{
+    width: 100%;
+    height: 90px;
+    resize: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid var(--medium-grey);
+   padding: 10px;
+}
+.checkbox{
+    padding: 1rem 0;
+}
+.checkbox div{
+   display: flex;
+   gap: .5rem;
+   align-items: center;
+}
+button[type="submit"]{
+  padding: .7rem 0;
+  color:var(--white) ;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: var(--custom-green);
+}
+
+.star{
+    font-weight: 800;
+    color: var(--custom-green);
+}
+button[type="submit"]:hover{
+    background-color: #17957e;
+}
+span.error{
+    font-size: .9rem;
+    color: var(--red);
+
+}
+input[type="checkbox"],input[type="radio"]{
+    accent-color: var(--custom-green);
+     cursor: pointer;
+}
+input.error , textarea.error{
+    outline: 1px solid var(--red);
+}
+span.hidden {
+  display: none;
+}
+/* Toast  */
+
+.toast {
+  background: var(--custom-green);
+  max-width: 430px;
+  width: 100%;
+  padding: 1rem 0.8rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--white);
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.toast div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.toast.hidden {
+  display: none;
+}
+
+
+@media screen and (max-width:755px){
+    body{
+        padding: .5rem;
+        padding-top: unset;
+        padding-top: 100px;
+    }
+    .form-container{
+        max-width: 400px;
+        width: 100%;
+       
+    }
+    .name-inputs{
+        flex-direction: column;
+    }
+    .query{
+        flex-direction: column;
+    }
+    textarea{
+        height: 190px;
+    }
+    .toast{
+        max-width: 340px;
+        width: 100%;
+        font-size: .9rem;
+    }
+}
+
+/* Footer */
+.attribution {
+  width: 100%;
+  padding: 2rem 0;
+  border-top: 1px solid #3e3e3e22;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 200px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.checkedRadio {
+  accent-color: red;
+}
